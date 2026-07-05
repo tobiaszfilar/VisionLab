@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/VisionLab.Api/VisionLab.Api.csproj" />
+    <Project Path="src/VisionLab.Application/VisionLab.Application.csproj" />
+    <Project Path="src/VisionLab.Client/VisionLab.Client.csproj" />
+    <Project Path="src/VisionLab.Core/VisionLab.Core.csproj" />
+    <Project Path="src/VisionLab.Infrastructure/VisionLab.Infrastructure.csproj" />
+    <Project Path="src/VisionLab.Shared/VisionLab.Shared.csproj" />
+    <Project Path="src/VisionLab.UI/VisionLab.UI.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/VisionLab.Tests/VisionLab.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,15 @@
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/bin/Debug/net10.0/VisionLab.Application.deps.json
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/bin/Debug/net10.0/VisionLab.Application.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/bin/Debug/net10.0/VisionLab.Application.pdb
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/bin/Debug/net10.0/VisionLab.Core.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/bin/Debug/net10.0/VisionLab.Core.pdb
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.csproj.AssemblyReference.cache
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.AssemblyInfoInputs.cache
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.AssemblyInfo.cs
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.csproj.CoreCompileInputs.cache
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLa.25D26480.Up2Date
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/refint/VisionLab.Application.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/VisionLab.Application.pdb
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/obj/Debug/net10.0/ref/VisionLab.Application.dll

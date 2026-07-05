@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "VisionLab.Client/1.0.0": {
+        "dependencies": {
+          "VisionLab.Shared": "1.0.0"
+        },
+        "runtime": {
+          "VisionLab.Client.dll": {}
+        }
+      },
+      "VisionLab.Shared/1.0.0": {
+        "runtime": {
+          "VisionLab.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VisionLab.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VisionLab.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
