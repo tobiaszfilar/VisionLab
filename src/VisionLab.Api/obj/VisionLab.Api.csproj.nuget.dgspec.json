@@ -1208,6 +1208,9 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
+              "/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/VisionLab.Application.csproj": {
+                "projectPath": "/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Application/VisionLab.Application.csproj"
+              },
               "/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Core/VisionLab.Core.csproj": {
                 "projectPath": "/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Core/VisionLab.Core.csproj"
               }
@@ -1232,7 +1235,19 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[10.0.9, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[10.0.9, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[10.0.9, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[10.0.9, )"
             }

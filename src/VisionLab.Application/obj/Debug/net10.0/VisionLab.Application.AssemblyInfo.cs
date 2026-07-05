@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VisionLab.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd7c64e7ee73003b60e7308936868125beabcf76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edae83658585b9352600e4cb8110845152307a8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("VisionLab.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VisionLab.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

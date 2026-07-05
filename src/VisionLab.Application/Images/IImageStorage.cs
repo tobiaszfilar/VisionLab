@@ -4,7 +4,7 @@ namespace VisionLab.Application.Images;
 
 public interface IImageStorage
 {
-    Task<ImageAssetId> SaveAsync(
+    Task<ImageAsset> SaveAsync(
         Stream imageStream,
         string originalFileName,
         string contentType,

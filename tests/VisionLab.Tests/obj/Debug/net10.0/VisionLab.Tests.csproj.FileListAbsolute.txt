@@ -108,3 +108,9 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/VisionLab.Infrastructure.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/obj/Debug/net10.0/VisionLab.Tests.sourcelink.json
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.Configuration.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.Options.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.Primitives.dll

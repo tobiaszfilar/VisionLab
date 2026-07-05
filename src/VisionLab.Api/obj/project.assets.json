@@ -141,6 +141,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "VisionLab.Application": "1.0.0",
           "VisionLab.Core": "1.0.0"
         },
         "compile": {

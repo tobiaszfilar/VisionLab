@@ -32,6 +32,45 @@ public sealed class ImageAsset
         long sizeInBytes,
         DateTimeOffset createdAt)
     {
+        return CreateInternal(
+            ImageAssetId.New(),
+            originalFileName,
+            storedFileName,
+            contentType,
+            sizeInBytes,
+            createdAt);
+    }
+
+    public static ImageAsset Restore(
+        ImageAssetId id,
+        string originalFileName,
+        string storedFileName,
+        string contentType,
+        long sizeInBytes,
+        DateTimeOffset createdAt)
+    {
+        if (id.Value == Guid.Empty)
+        {
+            throw new ArgumentException("Image asset id cannot be empty.", nameof(id));
+        }
+
+        return CreateInternal(
+            id,
+            originalFileName,
+            storedFileName,
+            contentType,
+            sizeInBytes,
+            createdAt);
+    }
+
+    private static ImageAsset CreateInternal(
+        ImageAssetId id,
+        string originalFileName,
+        string storedFileName,
+        string contentType,
+        long sizeInBytes,
+        DateTimeOffset createdAt)
+    {
         ArgumentException.ThrowIfNullOrEmpty(originalFileName, nameof(originalFileName));
         ArgumentException.ThrowIfNullOrEmpty(storedFileName, nameof(storedFileName));
         ArgumentException.ThrowIfNullOrEmpty(contentType, nameof(contentType));
@@ -41,7 +80,7 @@ public sealed class ImageAsset
         }
 
         return new ImageAsset(
-            ImageAssetId.New(),
+            id,
             originalFileName,
             storedFileName,
             contentType,

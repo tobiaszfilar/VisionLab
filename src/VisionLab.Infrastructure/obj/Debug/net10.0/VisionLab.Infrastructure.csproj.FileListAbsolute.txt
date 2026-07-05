@@ -14,3 +14,5 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Infrastructure/obj/Debug/net10.0/VisionLab.Infrastructure.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Infrastructure/obj/Debug/net10.0/ref/VisionLab.Infrastructure.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Infrastructure/obj/Debug/net10.0/VisionLab.Infrastructure.sourcelink.json
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Infrastructure/bin/Debug/net10.0/VisionLab.Application.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Infrastructure/bin/Debug/net10.0/VisionLab.Application.pdb
