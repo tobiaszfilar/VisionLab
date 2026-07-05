@@ -77,6 +77,28 @@ public sealed class DiskImageStorage : IImageStorage
         }
     }
 
+    public async Task<ImageAsset?> GetByIdAsync(
+        ImageAssetId id,
+        CancellationToken cancellationToken = default)
+    {
+        EnsureStorageDirectoryExists();
+
+        await _lock.WaitAsync(cancellationToken);
+
+        try
+        {
+            var records = await ReadManifestUnsafeAsync(cancellationToken);
+
+            var record = records.FirstOrDefault(x => x.Id == id.Value);
+
+            return record?.ToDomain();
+        }
+        finally
+        {
+            _lock.Release();
+        }
+    }
+
     private async Task AddToManifestAsync(ImageAsset asset, CancellationToken cancellationToken)
     {
         await _lock.WaitAsync(cancellationToken);

@@ -2,9 +2,9 @@ using VisionLab.Core.Images;
 
 namespace VisionLab.Application.Images;
 
-public interface IImageStorage
+public interface IImageAssetService
 {
-    Task<ImageAsset> SaveAsync(
+    Task<ImageAsset> UploadAsync(
         Stream imageStream,
         string originalFileName,
         string contentType,
