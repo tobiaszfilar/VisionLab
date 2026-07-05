@@ -13,3 +13,4 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Client/obj/Debug/net10.0/refint/VisionLab.Client.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Client/obj/Debug/net10.0/VisionLab.Client.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Client/obj/Debug/net10.0/ref/VisionLab.Client.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Client/obj/Debug/net10.0/VisionLab.Client.sourcelink.json

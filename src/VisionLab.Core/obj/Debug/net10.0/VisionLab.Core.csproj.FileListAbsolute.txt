@@ -9,3 +9,4 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Core/obj/Debug/net10.0/refint/VisionLab.Core.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Core/obj/Debug/net10.0/VisionLab.Core.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Core/obj/Debug/net10.0/ref/VisionLab.Core.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Core/obj/Debug/net10.0/VisionLab.Core.sourcelink.json

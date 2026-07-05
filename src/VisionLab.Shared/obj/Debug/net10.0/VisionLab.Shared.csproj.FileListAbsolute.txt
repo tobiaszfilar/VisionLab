@@ -9,3 +9,4 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Shared/obj/Debug/net10.0/refint/VisionLab.Shared.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Shared/obj/Debug/net10.0/VisionLab.Shared.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Shared/obj/Debug/net10.0/ref/VisionLab.Shared.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Shared/obj/Debug/net10.0/VisionLab.Shared.sourcelink.json

@@ -106,3 +106,5 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/VisionLab.Core.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/VisionLab.Application.pdb
 /Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/VisionLab.Infrastructure.pdb
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/bin/Debug/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/tests/VisionLab.Tests/obj/Debug/net10.0/VisionLab.Tests.sourcelink.json

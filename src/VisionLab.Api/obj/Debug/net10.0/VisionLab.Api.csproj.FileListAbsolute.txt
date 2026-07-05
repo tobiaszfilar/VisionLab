@@ -42,3 +42,4 @@
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Api/bin/Debug/net10.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Api/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Api/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/tobiaszfilar/Projects/netproject/VisionLab/src/VisionLab.Api/obj/Debug/net10.0/VisionLab.Api.sourcelink.json
