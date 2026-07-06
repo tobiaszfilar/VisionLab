@@ -23,6 +23,8 @@
     <ProjectReference Include="..\..\src\VisionLab.Core\VisionLab.Core.csproj" />
     <ProjectReference Include="..\..\src\VisionLab.Application\VisionLab.Application.csproj" />
     <ProjectReference Include="..\..\src\VisionLab.Infrastructure\VisionLab.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\VisionLab.Client\VisionLab.Client.csproj" />
+    <ProjectReference Include="..\..\src\VisionLab.Shared\VisionLab.Shared.csproj" />
   </ItemGroup>
 
 </Project>
