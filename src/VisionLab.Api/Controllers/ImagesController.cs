@@ -72,7 +72,7 @@ public class ImagesController : ControllerBase
         CancellationToken cancellationToken)
     {
         var asset = await _imageAssetService.GetByIdAsync(
-            new ImageAssetId(id), 
+            new ImageAssetId(id),
             cancellationToken);
 
         if (asset is null)

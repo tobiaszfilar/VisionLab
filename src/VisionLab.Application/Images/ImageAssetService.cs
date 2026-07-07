@@ -2,7 +2,7 @@ using VisionLab.Core.Images;
 
 namespace VisionLab.Application.Images;
 
-public sealed class ImageAssetService: IImageAssetService
+public sealed class ImageAssetService : IImageAssetService
 {
     private readonly IImageStorage _imageStorage;
 
@@ -37,7 +37,7 @@ public sealed class ImageAssetService: IImageAssetService
     }
 
     public Task<ImageAsset?> GetByIdAsync(
-        ImageAssetId id, 
+        ImageAssetId id,
         CancellationToken cancellationToken = default)
     {
         return _imageStorage.GetByIdAsync(id, cancellationToken);

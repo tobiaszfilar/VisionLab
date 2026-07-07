@@ -16,21 +16,21 @@ internal sealed class VisionLabApiClient : IVisionLabApiClient
     public async Task<IReadOnlyCollection<ImageAssetDto>> GetImagesAsync(CancellationToken cancellationToken = default)
     {
         using var response = await _httpClient.GetAsync(
-            "api/images", 
+            "api/images",
             cancellationToken);
-        
+
         await EnsureSuccessAsync(response, cancellationToken);
 
         var images = await response.Content.ReadFromJsonAsync<ImageAssetDto[]>(
             cancellationToken);
-        
+
         return images ?? [];
     }
 
     public async Task<ImageAssetDto?> GetImageByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         using var response = await _httpClient.GetAsync(
-            $"api/images/{id}", 
+            $"api/images/{id}",
             cancellationToken);
 
         if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -58,10 +58,10 @@ internal sealed class VisionLabApiClient : IVisionLabApiClient
             fileContent,
             "file",
             fileName);
-        
+
         using var response = await _httpClient.PostAsync(
-            "api/images", 
-            form, 
+            "api/images",
+            form,
             cancellationToken);
 
         await EnsureSuccessAsync(response, cancellationToken);
@@ -69,12 +69,12 @@ internal sealed class VisionLabApiClient : IVisionLabApiClient
         var uploadedImage = await response.Content.ReadFromJsonAsync<ImageAssetDto>(
             cancellationToken);
 
-        return uploadedImage 
+        return uploadedImage
             ?? throw new InvalidOperationException("API returned empty response for uploaded image.");
     }
 
     private static async Task EnsureSuccessAsync(
-        HttpResponseMessage response, 
+        HttpResponseMessage response,
         CancellationToken cancellationToken)
     {
         if (response.IsSuccessStatusCode)
@@ -85,7 +85,7 @@ internal sealed class VisionLabApiClient : IVisionLabApiClient
         var responseBody = response.Content is null
             ? null
             : await response.Content.ReadAsStringAsync(cancellationToken);
-        
+
         throw new VisionLabApiException(
             response.StatusCode,
             responseBody);

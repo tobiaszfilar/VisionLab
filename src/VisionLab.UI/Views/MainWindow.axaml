@@ -19,6 +19,9 @@
             <Button Content="Refresh"
                     Command="{Binding RefreshCommand}" />
 
+            <Button Content="Upload"
+                    Command="{Binding UploadCommand}" />
+
             <TextBlock Text="{Binding StatusMessage}"
                        VerticalAlignment="Center" />
 
