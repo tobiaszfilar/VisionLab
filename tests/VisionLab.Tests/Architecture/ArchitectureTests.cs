@@ -4,6 +4,8 @@ using VisionLab.Application;
 using VisionLab.Infrastructure;
 using VisionLab.Core;
 
+namespace VisionLab.Tests.Architecture;
+
 public class ArchitectureTests
 {
     [Fact]

@@ -104,28 +104,28 @@ public sealed class DiskImageStorage : IImageStorage
         CancellationToken cancellationToken = default)
     {
         EnsureStorageDirectoryExists();
-    
+
         await _lock.WaitAsync(cancellationToken);
-    
+
         try
         {
             var records = await ReadManifestUnsafeAsync(cancellationToken);
-    
+
             var record = records.FirstOrDefault(x => x.Id == id.Value);
-    
+
             if (record is null)
             {
                 return null;
             }
-    
+
             var safeStoredFileName = Path.GetFileName(record.StoredFileName);
             var filePath = Path.Combine(_options.RootPath, safeStoredFileName);
-    
+
             if (!File.Exists(filePath))
             {
                 return null;
             }
-    
+
             return File.OpenRead(filePath);
         }
         finally

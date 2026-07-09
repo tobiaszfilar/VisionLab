@@ -50,21 +50,21 @@ public sealed class ImageAssetService : IImageAssetService
         var asset = await _imageStorage.GetByIdAsync(
             id,
             cancellationToken);
-    
+
         if (asset is null)
         {
             return null;
         }
-    
+
         var stream = await _imageStorage.OpenReadAsync(
             id,
             cancellationToken);
-    
+
         if (stream is null)
         {
             return null;
         }
-    
+
         return new ImageAssetContent(
             asset.OriginalFileName,
             asset.ContentType,

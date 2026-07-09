@@ -91,12 +91,12 @@ public class ImagesController : ControllerBase
         var content = await _imageAssetService.GetContentAsync(
             new ImageAssetId(id),
             cancellationToken);
-    
+
         if (content is null)
         {
             return NotFound();
         }
-    
+
         return File(
             content.Stream,
             content.ContentType,

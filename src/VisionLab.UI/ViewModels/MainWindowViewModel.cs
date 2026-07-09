@@ -168,43 +168,43 @@ public sealed class MainWindowViewModel : ViewModelBase
     private async Task LoadPreviewAsync(ImageAssetDto? image)
     {
         var previousCancellationTokenSource = _previewCancellationTokenSource;
-    
+
         _previewCancellationTokenSource = new CancellationTokenSource();
-    
+
         previousCancellationTokenSource?.Cancel();
         previousCancellationTokenSource?.Dispose();
-    
+
         if (image is null)
         {
             PreviewImage = null;
             return;
         }
-    
+
         var cancellationToken = _previewCancellationTokenSource.Token;
-    
+
         try
         {
             StatusMessage = $"Loading preview for {image.OriginalFileName}...";
-    
+
             await using var stream = await _apiClient.GetImageContentAsync(
                 image.Id,
                 cancellationToken);
-    
+
             if (stream is null)
             {
                 PreviewImage = null;
                 StatusMessage = "Preview not found.";
                 return;
             }
-    
+
             var bitmap = new Bitmap(stream);
-    
+
             if (cancellationToken.IsCancellationRequested)
             {
                 bitmap.Dispose();
                 return;
             }
-    
+
             PreviewImage = bitmap;
             StatusMessage = $"Preview loaded: {image.OriginalFileName}";
         }

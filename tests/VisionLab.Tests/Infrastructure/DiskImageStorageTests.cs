@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Options;
 using VisionLab.Infrastructure.Images;
 
-namespace VisionLab.Tests;
+namespace VisionLab.Tests.Infrastructure;
 
 public sealed class DiskImageStorageTests : IDisposable
 {

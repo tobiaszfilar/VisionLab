@@ -1,6 +1,6 @@
 using VisionLab.Core.Images;
 
-namespace VisionLab.Tests;
+namespace VisionLab.Tests.Core;
 
 public sealed class ImageAssetTests
 {

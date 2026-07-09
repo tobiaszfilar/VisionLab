@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 using VisionLab.Client;
 using VisionLab.Shared.Images;
 
-namespace VisionLab.Tests;
+namespace VisionLab.Tests.Client;
 
 public sealed class VisionLabApiClientTests
 {
@@ -133,13 +133,13 @@ public sealed class VisionLabApiClientTests
     public async Task GetImageContentAsync_should_return_stream()
     {
         var bytes = new byte[] { 1, 2, 3, 4 };
-    
+
         using var httpClient = new HttpClient(
             new StubHttpMessageHandler(request =>
             {
                 Assert.Equal(HttpMethod.Get, request.Method);
                 Assert.EndsWith("/content", request.RequestUri?.AbsolutePath);
-    
+
                 return new HttpResponseMessage(HttpStatusCode.OK)
                 {
                     Content = new ByteArrayContent(bytes)
@@ -148,17 +148,17 @@ public sealed class VisionLabApiClientTests
         {
             BaseAddress = new Uri("http://localhost")
         };
-    
+
         var client = new VisionLabApiClient(httpClient);
-    
+
         await using var stream = await client.GetImageContentAsync(Guid.NewGuid());
-    
+
         Assert.NotNull(stream);
-    
+
         using var memoryStream = new MemoryStream();
-    
+
         await stream.CopyToAsync(memoryStream);
-    
+
         Assert.Equal(bytes, memoryStream.ToArray());
     }
 
