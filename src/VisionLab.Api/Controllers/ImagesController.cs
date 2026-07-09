@@ -83,6 +83,26 @@ public class ImagesController : ControllerBase
         return Ok(MapToDto(asset));
     }
 
+    [HttpGet("{id:guid}/content")]
+    public async Task<IActionResult> GetContentAsync(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        var content = await _imageAssetService.GetContentAsync(
+            new ImageAssetId(id),
+            cancellationToken);
+    
+        if (content is null)
+        {
+            return NotFound();
+        }
+    
+        return File(
+            content.Stream,
+            content.ContentType,
+            content.FileName);
+    }
+
     private static ImageAssetDto MapToDto(ImageAsset asset)
     {
         return new ImageAssetDto(

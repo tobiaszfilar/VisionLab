@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using Avalonia.Media.Imaging;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using VisionLab.Client;
 using VisionLab.Shared.Images;
@@ -14,6 +15,10 @@ public sealed class MainWindowViewModel : ViewModelBase
 
     private bool _isBusy;
     private string _statusMessage = "Ready";
+
+    private ImageAssetDto? _selectedImage;
+    private Bitmap? _previewImage;
+    private CancellationTokenSource? _previewCancellationTokenSource;
 
     public MainWindowViewModel(
         IVisionLabApiClient apiClient,
@@ -42,6 +47,42 @@ public sealed class MainWindowViewModel : ViewModelBase
     {
         get => _statusMessage;
         private set => SetProperty(ref _statusMessage, value);
+    }
+
+    public ImageAssetDto? SelectedImage
+    {
+        get => _selectedImage;
+        set
+        {
+            if (ReferenceEquals(_selectedImage, value))
+            {
+                return;
+            }
+
+            _selectedImage = value;
+            OnPropertyChanged();
+
+            _ = LoadPreviewAsync(value);
+        }
+    }
+
+    public Bitmap? PreviewImage
+    {
+        get => _previewImage;
+        private set
+        {
+            if (ReferenceEquals(_previewImage, value))
+            {
+                return;
+            }
+
+            var oldImage = _previewImage;
+
+            _previewImage = value;
+            OnPropertyChanged();
+
+            oldImage?.Dispose();
+        }
     }
 
     private async Task RefreshAsync()
@@ -82,12 +123,12 @@ public sealed class MainWindowViewModel : ViewModelBase
 
             StatusMessage = $"Uploading {pickedFile.FileName}...";
 
-            await _apiClient.UploadImageAsync(
+            var uploadedImage = await _apiClient.UploadImageAsync(
                 pickedFile.Stream,
                 pickedFile.FileName,
                 pickedFile.ContentType);
 
-            await RefreshImagesAsync();
+            await RefreshImagesAsync(uploadedImage.Id);
 
             StatusMessage = $"Uploaded {pickedFile.FileName}.";
         }
@@ -101,8 +142,10 @@ public sealed class MainWindowViewModel : ViewModelBase
         }
     }
 
-    private async Task RefreshImagesAsync()
+    private async Task RefreshImagesAsync(Guid? preferredSelectedImageId = null)
     {
+        var selectedImageId = preferredSelectedImageId ?? SelectedImage?.Id;
+
         var images = await _apiClient.GetImagesAsync();
 
         Images.Clear();
@@ -110,6 +153,69 @@ public sealed class MainWindowViewModel : ViewModelBase
         foreach (var image in images.OrderByDescending(x => x.CreatedAt))
         {
             Images.Add(image);
+        }
+
+        if (selectedImageId is not null)
+        {
+            SelectedImage = Images.FirstOrDefault(x => x.Id == selectedImageId.Value);
+        }
+        else
+        {
+            SelectedImage = null;
+        }
+    }
+
+    private async Task LoadPreviewAsync(ImageAssetDto? image)
+    {
+        var previousCancellationTokenSource = _previewCancellationTokenSource;
+    
+        _previewCancellationTokenSource = new CancellationTokenSource();
+    
+        previousCancellationTokenSource?.Cancel();
+        previousCancellationTokenSource?.Dispose();
+    
+        if (image is null)
+        {
+            PreviewImage = null;
+            return;
+        }
+    
+        var cancellationToken = _previewCancellationTokenSource.Token;
+    
+        try
+        {
+            StatusMessage = $"Loading preview for {image.OriginalFileName}...";
+    
+            await using var stream = await _apiClient.GetImageContentAsync(
+                image.Id,
+                cancellationToken);
+    
+            if (stream is null)
+            {
+                PreviewImage = null;
+                StatusMessage = "Preview not found.";
+                return;
+            }
+    
+            var bitmap = new Bitmap(stream);
+    
+            if (cancellationToken.IsCancellationRequested)
+            {
+                bitmap.Dispose();
+                return;
+            }
+    
+            PreviewImage = bitmap;
+            StatusMessage = $"Preview loaded: {image.OriginalFileName}";
+        }
+        catch (OperationCanceledException)
+        {
+            // Ignore cancelled preview loads.
+        }
+        catch (Exception ex)
+        {
+            PreviewImage = null;
+            StatusMessage = $"Preview error: {ex.Message}";
         }
     }
 }

@@ -18,4 +18,8 @@ public interface IImageStorage
     Task<ImageAsset?> GetByIdAsync(
         ImageAssetId id,
         CancellationToken cancellationToken = default);
+
+    Task<Stream?> OpenReadAsync(
+        ImageAssetId id,
+        CancellationToken cancellationToken = default);
 }

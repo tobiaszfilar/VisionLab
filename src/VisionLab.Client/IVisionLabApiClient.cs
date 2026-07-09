@@ -18,4 +18,8 @@ public interface IVisionLabApiClient
         string contentType,
         CancellationToken cancellationToken = default
     );
+
+    Task<Stream?> GetImageContentAsync(
+        Guid id,
+        CancellationToken cancellationToken = default);
 }

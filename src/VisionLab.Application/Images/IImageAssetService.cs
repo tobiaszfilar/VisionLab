@@ -18,4 +18,8 @@ public interface IImageAssetService
     Task<ImageAsset?> GetByIdAsync(
         ImageAssetId id,
         CancellationToken cancellationToken = default);
+
+    Task<ImageAssetContent?> GetContentAsync(
+        ImageAssetId id,
+        CancellationToken cancellationToken = default);
 }

@@ -73,6 +73,35 @@ internal sealed class VisionLabApiClient : IVisionLabApiClient
             ?? throw new InvalidOperationException("API returned empty response for uploaded image.");
     }
 
+    public async Task<Stream?> GetImageContentAsync(
+        Guid id,
+        CancellationToken cancellationToken = default)
+    {
+        using var response = await _httpClient.GetAsync(
+            $"api/images/{id}/content",
+            cancellationToken);
+    
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            return null;
+        }
+    
+        await EnsureSuccessAsync(response, cancellationToken);
+    
+        await using var responseStream = await response.Content.ReadAsStreamAsync(
+            cancellationToken);
+    
+        var memoryStream = new MemoryStream();
+    
+        await responseStream.CopyToAsync(
+            memoryStream,
+            cancellationToken);
+    
+        memoryStream.Position = 0;
+    
+        return memoryStream;
+    }
+
     private static async Task EnsureSuccessAsync(
         HttpResponseMessage response,
         CancellationToken cancellationToken)
